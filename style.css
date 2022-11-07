@@ -1,7 +1,7 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 body {
-    font-family: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    font-family: 'Roboto', sans-serif;
     background-color: rgb(185, 169, 115);
 }
 
@@ -92,8 +92,8 @@ body {
     font-size: 1.5rem;
 }
 .middleDiceBox {
-    font-size: 6rem;
-    color: red;
+    width: 30%;
+    height: 40%;
 }
 .rollDiceBtn {
     font-size: 1.5rem;
