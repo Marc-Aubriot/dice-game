@@ -1,0 +1,103 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');*/
+
+body {
+    font-family: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    background-color: rgb(185, 169, 115);
+}
+
+/* BOARD: main, player */
+.mainBoard {
+    width: 93vw;
+    height: 95vh;
+}
+.playerOneBoard {
+    background-color: azure;
+    width: 50%;
+    height: 100%;
+}
+.playerTwoBoard {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+}
+
+/* Player Board > Box  */
+.topBox {
+    width: 100%;
+    height: 60%;
+}
+.botBox {
+    width: 100%;
+    height: 40%
+}
+.wrapperBot {
+    background-color: red;
+    width: 30%;
+    height: 30%;
+}
+
+/* Player Text : Player info, Global points and Round points*/
+.player {
+    font-size: 3rem;
+}
+.playerGlobalPointCount {
+    font-size: 6rem;
+    color: red;
+}
+.playerRoundPointCount {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Middle Interface > COLUMN */
+.middleInterface {
+    position: absolute;
+    right: 33%;
+    width: 33%;
+    height: 95%;
+}
+.newGame {
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    height: 20%;
+}
+.middleDice {   
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    height: 29%;
+}
+.spaceBuffer {
+    width: 100%;
+    height: 25%;
+    margin: 0;
+    padding: 0;
+}
+.rollDice {  
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    height: 5%;
+}
+.holdDice {  
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    height: 10%;
+}
+
+/* Middle Interface > Text, Dice, Btn */
+.newGameBtn {
+    font-size: 1.5rem;
+}
+.middleDiceBox {
+    font-size: 6rem;
+    color: red;
+}
+.rollDiceBtn {
+    font-size: 1.5rem;
+}
+.holdDiceBtn {
+    font-size: 1.5rem;
+}
