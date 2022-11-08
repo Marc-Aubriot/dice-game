@@ -1,11 +1,10 @@
-// import here
 let gameInstance;
 
 // bouton newGame initilise la partie
 function newGame() {
     if ( gameInstance !== undefined ) {
         gameInstance = new Game();
-        updateUi();
+        gameInstance.updateUi();
         console.log("nouvelle partie");
         return;
     };
@@ -25,7 +24,7 @@ function rollDice() {
 
     gameInstance.diceRoll();
     gameInstance.rollCheck();
-    updateUi();
+    gameInstance.updateUi();
 };
 
 // bouton holdDice, garde les points gagnés et les ajoute aux points "global"
@@ -36,28 +35,7 @@ function holdDice() {
     };
 
     gameInstance.holdTurn();
-    updateUi();
-};
-
-// update the players ui and dice
-function updateUi() {
-    const diceImage = document.getElementById('diceImage');
-    const globalP1 = document.getElementById('playerOneGlobalPoint');
-    const globalP2 = document.getElementById('playerTwoGlobalPoint');
-    const roundP1 = document.getElementById('playerOneRoundPoint');
-    const roundP2 = document.getElementById('playerTwoRoundPoint');
-
-    diceImage.src = `/images/dice-${gameInstance.roll}.png`;
-    globalP1.textContent = `${gameInstance.playerOneGlobalPoint}`;
-    globalP2.textContent = `${gameInstance.playerTwoGlobalPoint}`;
-    roundP1.textContent = `${gameInstance.playerOneRoundPoint}`;
-    roundP2.textContent = `${gameInstance.playerTwoRoundPoint}`;
-
-    if ( gameInstance.playerWin === 1 ) {
-        globalP1.textContent = `Victoire !`;
-    } else if ( gameInstance.playerWin === 2 ) {
-        globalP2.textContent = `Victoire !`;
-    };
+    gameInstance.updateUi();
 };
 
 // game logic and variables
@@ -139,13 +117,34 @@ class Game {
         this.checkWin = function() {
             if ( this.playerTurn === 1 && this.playerOneGlobalPoint >= 100 ) {
                 this.playerWin = 1;
-            } else if ( this.playerTurn === 2 && this.playerTwoRoundPoint >= 100 ) {
+            } else if ( this.playerTurn === 2 && this.playerTwoGlobalPoint >= 100 ) {
                 this.playerWin = 2;
             } else {
                 if (this.debug) {
                     console.log('no victory');
                 };
                 return;
+            };
+        };
+
+        // update ui
+        this.updateUi = function() {
+            const diceImage = document.getElementById('diceImage');
+            const globalP1 = document.getElementById('playerOneGlobalPoint');
+            const globalP2 = document.getElementById('playerTwoGlobalPoint');
+            const roundP1 = document.getElementById('playerOneRoundPoint');
+            const roundP2 = document.getElementById('playerTwoRoundPoint');
+        
+            diceImage.src = `/images/dice-${this.roll}.png`;
+            globalP1.textContent = `${this.playerOneGlobalPoint}`;
+            globalP2.textContent = `${this.playerTwoGlobalPoint}`;
+            roundP1.textContent = `${this.playerOneRoundPoint}`;
+            roundP2.textContent = `${this.playerTwoRoundPoint}`;
+        
+            if ( this.playerWin === 1 ) {
+                globalP1.textContent = `Victoire !`;
+            } else if ( this.playerWin === 2 ) {
+                globalP2.textContent = `Victoire !`;
             };
         };
     };
