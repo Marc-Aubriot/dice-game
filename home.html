@@ -53,21 +53,21 @@
         <!-- Middle Interface -->
         <div class="middleInterface text-center g-0">
             <div class="row newGame align-items-center mx-auto">
-                <p class="newGameBtn"><i class="bi bi-plus-circle"></i> NEW GAME</p>
+                <button type="button" onclick="newGame()" class="newGameBtn"><i class="bi bi-plus-circle"></i> NEW GAME</button>
             </div>
 
             <div class="row middleDice align-items-center mx-auto g-0">
-                <img src="/images/dice-6.png" alt="" class="middleDiceBox mx-auto">
+                <img src="/images/dice-1.png" alt="dice image" id="diceImage" class="middleDiceBox mx-auto">
             </div>
 
             <div class="row spaceBuffer"></div>
 
             <div class="row rollDice align-items-center mx-auto g-0">
-                <p class="rollDiceBtn"><i class="bi bi-arrow-repeat"></i> ROLL DICE</p>
+                <button type="button" onclick="rollDice()" class="rollDiceBtn"><i class="bi bi-arrow-repeat"></i> ROLL DICE</button>
             </div>
 
             <div class="row holdDice align-items-center mx-auto g-0">
-                <p class="holdDiceBtn"><i class="bi bi-box-arrow-in-down"></i> HOLD</p>
+                <button type="button" onclick="holdDice()" class="holdDiceBtn"><i class="bi bi-box-arrow-in-down"></i> HOLD</button>
             </div>
         </div>
 
