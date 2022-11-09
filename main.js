@@ -139,6 +139,8 @@ class Game {
             const boardP2 = document.getElementById('playerTwoBoard');
             const nameP1 = document.getElementById('playerNameOne');
             const nameP2 = document.getElementById('playerNameTwo');
+            const dotP1 = document.getElementById('playerOneDot');
+            const dotP2 = document.getElementById('playerTwoDot');
         
             // dice and player points update
             diceImage.src = `/images/dice-${this.roll}.png`;
@@ -151,13 +153,17 @@ class Game {
             if ( this.playerTurn === 1 ) {
                 boardP1.style = 'background-color: rgb(233, 233, 233);';
                 nameP1.style = 'font-weight: bold;';
+                dotP1.style = 'visibility: visible;';
                 boardP2.style = 'background-color: white;';
                 nameP2.style = 'font-weight: none;';
+                dotP2.style = 'visibility: hidden;';
             } else if ( this. playerTurn === 2 ) {
                 boardP1.style = 'background-color: white;';
                 nameP1.style = 'font-weight: none;';
+                dotP1.style = 'visibility: hidden;';
                 boardP2.style = 'background-color: rgb(233, 233, 233);';
                 nameP2.style = 'font-weight: bold;';
+                dotP2.style = 'visibility: visible;';
             };
 
             // win update

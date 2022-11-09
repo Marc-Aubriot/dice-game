@@ -55,6 +55,15 @@ button:active {
 .player {
     font-size: 3rem;
 }
+.dot {
+    height: 1rem;
+    width: 1rem;
+    background-color: rgb(235, 1, 1);
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: hidden;
+}
 .playerGlobalPointCount {
     font-size: 6rem;
     color: red;
