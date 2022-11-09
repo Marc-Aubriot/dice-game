@@ -26,6 +26,13 @@ function rollDice() {
     gameInstance.diceRoll();
     gameInstance.rollCheck();
     gameInstance.updateUi();
+
+    // dice roll animation
+    const dice = document.getElementById('diceImage');
+    dice.classList = 'middleDiceBox mx-auto shadow rotateDice';
+    setTimeout(() => {
+        dice.classList = 'middleDiceBox mx-auto shadow';
+    }, 200);
 };
 
 // bouton holdDice, garde les points gagnés et les ajoute aux points "global"
