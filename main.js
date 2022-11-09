@@ -22,6 +22,10 @@ function rollDice() {
         console.log('Pas de partie en cours');    
         return; 
     };
+    if ( gameInstance.playerWin !== 0 ) {
+        console.log('la partie est finie, il faut lancer une nouvelle partie');
+        return;
+    };
 
     gameInstance.diceRoll();
     gameInstance.rollCheck();
@@ -39,6 +43,10 @@ function rollDice() {
 function holdDice() {
     if ( gameInstance === undefined ) {
         console.log('Pas de partie en cours');
+        return;
+    };
+    if ( gameInstance.playerWin !== 0 ) {
+        console.log('la partie est finie, il faut lancer une nouvelle partie');
         return;
     };
 
