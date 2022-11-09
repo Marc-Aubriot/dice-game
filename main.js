@@ -9,6 +9,7 @@ function newGame() {
         return;
     };
     gameInstance = new Game();
+    gameInstance.updateUi();
     if (gameInstance.debug) { 
         console.log(gameInstance);
         console.log(`Début de partie, tour du joueur : ${gameInstance.playerTurn}`); 
@@ -134,13 +135,32 @@ class Game {
             const globalP2 = document.getElementById('playerTwoGlobalPoint');
             const roundP1 = document.getElementById('playerOneRoundPoint');
             const roundP2 = document.getElementById('playerTwoRoundPoint');
+            const boardP1 = document.getElementById('playerOneBoard');
+            const boardP2 = document.getElementById('playerTwoBoard');
+            const nameP1 = document.getElementById('playerNameOne');
+            const nameP2 = document.getElementById('playerNameTwo');
         
+            // dice and player points update
             diceImage.src = `/images/dice-${this.roll}.png`;
             globalP1.textContent = `${this.playerOneGlobalPoint}`;
             globalP2.textContent = `${this.playerTwoGlobalPoint}`;
             roundP1.textContent = `${this.playerOneRoundPoint}`;
             roundP2.textContent = `${this.playerTwoRoundPoint}`;
         
+            // background color and name weight change for active player
+            if ( this.playerTurn === 1 ) {
+                boardP1.style = 'background-color: rgb(233, 233, 233);';
+                nameP1.style = 'font-weight: bold;';
+                boardP2.style = 'background-color: white;';
+                nameP2.style = 'font-weight: none;';
+            } else if ( this. playerTurn === 2 ) {
+                boardP1.style = 'background-color: white;';
+                nameP1.style = 'font-weight: none;';
+                boardP2.style = 'background-color: rgb(233, 233, 233);';
+                nameP2.style = 'font-weight: bold;';
+            };
+
+            // win update
             if ( this.playerWin === 1 ) {
                 globalP1.textContent = `Victoire !`;
             } else if ( this.playerWin === 2 ) {
@@ -149,3 +169,5 @@ class Game {
         };
     };
 };
+
+newGame();
