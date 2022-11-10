@@ -116,8 +116,8 @@ button:active {
     font-size: 1.5rem;
 }
 .middleDiceBox {
-    width: 30%;
-    height: 40%;
+    width: 100px;
+    height: 100px;
     transition: all 0.5s;
 }
 .rotateDice {
@@ -176,6 +176,32 @@ button:active {
     }
     button:hover {
         font-size: 1.2rem;
+    }
+}
+
+/* mobile landscape */
+@media (max-height: 600px) and (orientation: landscape) {
+    .player {
+        font-size: 1.2rem;
+    }
+    .playerGlobalPointCount {
+        font-size: 4rem;
+    }
+    .rollDice {
+        position: absolute;
+        top: 65%;
+        left: 10%;
+        width: 200px;
+    }
+    .holdDice {
+        position: absolute;
+        top: 80%;
+        left: 10%;
+        width: 200px;
+    }
+    .newGame {
+        width: 100%;
+
     }
 }
 
